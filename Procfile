@@ -1,0 +1,1 @@
+web: gunicorn setgenerator.wsgi --log-file -

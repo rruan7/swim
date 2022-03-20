@@ -1,0 +1,64 @@
+{% extends "base.html" %} {% load static %} {% block page_content %}
+</br>
+<div class="row">
+  <div class="col-md-11">
+    <h1>Generate A Swim Set</h1>
+  </div>
+  <div class="col-md-1">
+    <!-- Render Refresh Button -->
+    <a href="{{ request.get_full_path }}" class="btn btn-primary">Refresh</a>
+  </div>
+</div>
+</br>
+<!-- Render Random Set -->
+<div class="row">
+    <!-- Generate Warm-Up -->
+  <div class="col-md-4">
+    <div class="card-header">
+        <h5>Warm-Up</h5>
+    </div>
+    <div class="card mb-2">
+      <div class="card-body">
+        <h6 class="card-text">{{ warmup.description|linebreaks }}</h6>
+        <p class="card-text">Distance: {{ warmup.distance}} yards</p>
+      </div>
+    </div>
+  </div>
+  <!-- Generate Main Sets -->
+  <div class="col-md-4">
+    <!-- Generate Set #1 -->
+    <div class="card-header">
+        <h5>Set #1</h5>
+    </div>
+    <div class="card mb-2">
+      <div class="card-body">
+        <h6 class="card-text">{{ mainset1.description|linebreaks }}</h6>
+        <p class="card-text">Distance: {{ mainset1.distance}} yards</p>
+      </div>
+    </div>
+    <!-- Generate Set #2 -->
+    <div class="card-header">
+      <h5>Set #2</h5>
+    </div>
+    <div class="card mb-2">
+      <div class="card-body">
+        <h6 class="card-text">{{ mainset2.description|linebreaks }}</h6>
+        <p class="card-text">Distance: {{ mainset2.distance}} yards</p>
+      </div>
+    </div>
+  </div> 
+  <!-- Generate Cool-Down -->
+  <div class="col-md-4">
+    <div class="card-header">
+        <h5>Cool-Down</h5>
+    </div>
+    <div class="card mb-2">
+      <div class="card-body">
+        <h6 class="card-text">{{ cooldown.description|linebreaks }}</h6>
+        <p class="card-text">Distance: {{ cooldown.distance}} yards</p>
+      </div>
+    </div>
+  </div>
+</br>
+</div>
+{% endblock %}

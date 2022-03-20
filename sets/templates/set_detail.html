@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% load static %} {% block page_content %}
+<h1>{{ project.title }}</h1>
+<div class="row">
+  <div class="col-md-8">
+    <img
+      src="https://user-images.githubusercontent.com/71851361/159172075-9a032b8a-682c-4fd3-bc79-620fc590ba4e.jpg"
+      alt=""
+      width="100%"
+    />
+  </div>
+  <div class="col-md-4">
+    <h1>#{{ set.pk }}</h1>
+    <h5>Category:</h5>
+    <p>{{ set.category }}</p>
+    <h5>Distance:</h5>
+    <p>{{ set.distance }} yards</p>
+    <h5>Description:</h5>
+    <p>{{ set.description|linebreaks }}</p>
+  </br>
+    <a href="{% url 'set_index' %}" class="btn btn-primary"> Back </a>
+  </div>
+</div>
+{% endblock %}

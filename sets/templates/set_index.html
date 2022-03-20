@@ -1,0 +1,73 @@
+{% extends "base.html" %} {% load static %} {% block page_content %}
+</br>
+<h1>Set Gallery</h1>
+</br>
+<!-- Render Warm-Ups -->
+<h4>Warm-Ups</h4>
+<div class="row">
+  {% for warmup in warmups %}
+  <div class="col-md-4">
+    <div class="card mb-2">
+      <img
+        class="card-img-top"
+        src="https://user-images.githubusercontent.com/71851361/159172075-9a032b8a-682c-4fd3-bc79-620fc590ba4e.jpg"
+        width="25%"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Distance: {{ warmup.distance }} yards <b>(#{{ warmup.pk}})</b></h5>
+        <p class="card-text">{{ warmup.description|linebreaks|truncatechars_html:15 }}</p>
+        <a href="{% url 'set_detail' warmup.pk %}" class="btn btn-primary">
+          More
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</br>
+<!-- Render Main Sets -->
+<h4>Main Sets</h4>
+<div class="row">
+  {% for mainset in mainsets %}
+  <div class="col-md-4">
+    <div class="card mb-2">
+      <img
+        class="card-img-top"
+        src="https://user-images.githubusercontent.com/71851361/159172075-9a032b8a-682c-4fd3-bc79-620fc590ba4e.jpg"
+        width="25%"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Distance: {{ mainset.distance }} yards <b>(#{{ mainset.pk}})</b></h5>
+        <p class="card-text">{{ mainset.description|linebreaks|truncatechars_html:15 }}</p>
+        <a href="{% url 'set_detail' mainset.pk %}" class="btn btn-primary">
+          More
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</br>
+<!-- Render Cool Downs -->
+<h4>Cool Downs</h4>
+<div class="row">
+  {% for cooldown in cooldowns %}
+  <div class="col-md-4">
+    <div class="card mb-2">
+      <img
+        class="card-img-top"
+        src="https://user-images.githubusercontent.com/71851361/159172075-9a032b8a-682c-4fd3-bc79-620fc590ba4e.jpg"
+        width="25%"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Distance: {{ cooldown.distance }} yards <b>(#{{ cooldown.pk}})</b></h5>
+        <p class="card-text">{{ cooldown.description|linebreaks|truncatechars_html:15 }}</p>
+        <a href="{% url 'set_detail' cooldown.pk %}" class="btn btn-primary">
+          More
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
